@@ -1,0 +1,27 @@
+<h1>Listing bottles</h1>
+
+<table>
+  <tr>
+    <th>Serial</th>
+    <th>Refillnumber</th>
+    <th>Cleaning</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bottles.each do |bottle| %>
+  <tr>
+    <td><%= bottle.serial %></td>
+    <td><%= bottle.refillNumber %></td>
+    <td><%= bottle.cleaning %></td>
+    <td><%= link_to 'Show', bottle %></td>
+    <td><%= link_to 'Edit', edit_bottle_path(bottle) %></td>
+    <td><%= link_to 'Destroy', bottle, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bottle', new_bottle_path %>

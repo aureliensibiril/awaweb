@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  serial: MyString
+  refillNumber: 1
+  cleaning: 2011-04-05 18:51:05
+
+two:
+  serial: MyString
+  refillNumber: 1
+  cleaning: 2011-04-05 18:51:05

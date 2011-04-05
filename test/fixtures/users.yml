@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  surname: MyString
+  email: MyString
+  height: 1
+  weight: 1
+  bottle_id: 1
+  group_id: 1
+
+two:
+  name: MyString
+  surname: MyString
+  email: MyString
+  height: 1
+  weight: 1
+  bottle_id: 1
+  group_id: 1

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Serial:</b>
+  <%= @bottle.serial %>
+</p>
+
+<p>
+  <b>Refillnumber:</b>
+  <%= @bottle.refillNumber %>
+</p>
+
+<p>
+  <b>Cleaning:</b>
+  <%= @bottle.cleaning %>
+</p>
+
+
+<%= link_to 'Edit', edit_bottle_path(@bottle) %> |
+<%= link_to 'Back', bottles_path %>

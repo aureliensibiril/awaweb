@@ -1,0 +1,29 @@
+<%= form_for(@bottle) do |f| %>
+  <% if @bottle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bottle.errors.count, "error") %> prohibited this bottle from being saved:</h2>
+
+      <ul>
+      <% @bottle.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :serial %><br />
+    <%= f.text_field :serial %>
+  </div>
+  <div class="field">
+    <%= f.label :refillNumber %><br />
+    <%= f.text_field :refillNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :cleaning %><br />
+    <%= f.datetime_select :cleaning %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
