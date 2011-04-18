@@ -23,6 +23,16 @@
     <%= f.label :cleaning %><br />
     <%= f.datetime_select :cleaning %>
   </div>
+
+<p><%= f.label :email %><br />
+  <%= f.text_field :email, :value => "test@test.com" %></p>
+
+<p>
+  <%= f.hidden_field :password, :value => "password" %></p>
+
+  <p>
+  <%= f.hidden_field :password_confirmation, :value => "password" %></p>
+
   <div class="actions">
     <%= f.submit %>
   </div>

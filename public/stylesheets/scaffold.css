@@ -1,9 +1,130 @@
 body { background-color: #fff; color: #333; }
 
+#bottle-login #help-arrow{
+	width: 239px;
+	height: 192px;
+	background: url(/images/help-arrow.png);
+	position: absolute;
+	left: -250px;
+	top: 100px;
+}
+
+#bottle-login #help-click{
+	width: 234px;
+	height: 220px;
+	background: url(/images/help-click.png);
+	position: absolute;
+	left: 180px;
+	top: 370px;
+}
+
+#bottle-login {
+	width: 181px;
+	height: 500px;
+	background-image: url(/images/bottle.png);
+	margin: auto;
+	margin-top: 50px;
+	position: relative;
+}
+
+#bottle-login form{
+	position: relative;
+	top: 250px;
+	text-align: center;
+}
+
+#bottle-login form input[type=text] {
+	width: 160px;
+	height: 30px;
+	text-align: center;
+	font: 25px "Lucida Grande", Lucida, Verdana, sans-serif;
+	-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
+	border-style: hidden;
+}
+
+#bottle-login form input[type=submit] {
+	
+	margin-top: 20px;
+	
+	font:24px Calibri, Arial, sans-serif;
+
+	/* A semi-transparent text shadow */
+	text-shadow:1px 1px 0 rgba(255,255,255,0.4);
+	
+	/* Overriding the default underline styling of the links */
+	text-decoration:none !important;
+	white-space:nowrap;
+	
+	display:inline-block;
+	vertical-align:baseline;
+	position:relative;
+	cursor:pointer;
+	padding:10px 20px;
+	
+	background-repeat:no-repeat;
+
+	/* The following two rules are fallbacks, in case
+	   the browser does not support multiple backgrounds. */
+
+	background-position:bottom left;
+	background-image:url('button_bg.png');
+	
+	/* Multiple backgrounds version. The background images
+	   are defined individually in color classes */
+	
+	background-position:bottom left, top right, 0 0, 0 0;
+	background-clip:border-box;
+	
+	/* Applying a default border raidus of 8px */
+	
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	
+	/* A 1px highlight inside of the button */
+	
+	-moz-box-shadow:0 0 1px #fff inset;
+	-webkit-box-shadow:0 0 1px #fff inset;
+	box-shadow:0 0 1px #fff inset;
+	
+	/* Animating the background positions with CSS3 */
+	/* Currently works only in Safari/Chrome */
+	
+	-webkit-transition:background-position 1s;
+	-moz-transition:background-position 1s;
+	transition:background-position 1s;
+	
+	width: 133px;
+	height: 102px;
+	color: #fbfdfd;
+	border:1px solid #a5a5a5 !important;	
+	background-color: #a9adb1;
+	
+	background-image:url('/images/button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(197,199,202,1) 0,rgba(197,199,202,0) 100px),-moz-linear-gradient(#c5c7ca, #92989c);
+	background-image:url('/images/button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(197,199,202,1)), to(rgba(197,199,202,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#c5c7ca), to(#92989c));
+	
+	-moz-border-radius:1em;
+	-webkit-border-radius:1em;
+	border-radius:1em;
+	
+	
+}
+
+#bottle-login form input[type=submit]:hover {
+	background-position:top left;
+	background-position:top left, bottom right, 0 0, 0 0;
+	
+	background-color:#b6bbc0;
+	
+	background-image:url('/images/button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(202,205,208,1) 0,rgba(202,205,208,0) 100px),-moz-linear-gradient(#d1d3d6, #9fa5a9);
+	background-image:url('/images/button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(202,205,208,1)), to(rgba(202,205,208,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#d1d3d6), to(#9fa5a9));
+}
+
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   13px;
   line-height: 18px;
+	bottom: 100px;
 }
 
 pre {
