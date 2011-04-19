@@ -2,93 +2,17 @@
 <script src="/javascripts/raphael-min.js"></script>
 <script>
 window.onload = function () {
-	var r = Raphael("holder", 600, 600),
-	R = 200,
-	init = true,
-	param = {stroke: "#fff", "stroke-width": 30},
-	hash = document.location.hash,
-	marksAttr = {fill: hash || "#444", stroke: "none"};
-	// Custom Attribute
-	r.customAttributes.arc = function (value, total, R) {
-		var alpha = 360 / total * value,
-		a = (90 - alpha) * Math.PI / 180,
-		x = 300 + R * Math.cos(a),
-		y = 300 - R * Math.sin(a),
-		color = "#1197cd",
-		path;
-
-		if (R == 160){
-			color = "#4acd70";
-		}
-
-		if (R == 120){
-			color = "#ff9d00";
-		}
-
-		if (total == value) {
-			path = [["M", 300, 300 - R], ["A", R, R, 0, 1, 1, 299.99, 300 - R]];
-		} else {
-			path = [["M", 300, 300 - R], ["A", R, R, 0, +(alpha > 180), 1, x, y]];
-		}
-		return {path: path, stroke: color};
-	};
-
-	drawMarks(R, 60);
-	var sec = r.path().attr(param).attr({arc: [0, 60, R]});
-	R -= 40;
-	drawMarks(R, 60);
-	var min = r.path().attr(param).attr({arc: [0, 60, R]});
-	R -= 40;
-	drawMarks(R, 40);
-	var hor = r.path().attr(param).attr({arc: [0, 12, R]});
-
-	function updateVal(value, total, R, hand, id) {
-
-		var color = "hsb(".concat(Math.round(R) / 200, ",", value / total, ", .75)");
-		if (init) {
-			hand.animate({arc: [value, total, R]}, 900, ">");
-		} else {
-			if (!value || value == total) {
-				value = total;
-				hand.animate({arc: [value, total, R]}, 750, "bounce", function () {
-					hand.attr({arc: [0, total, R]});
-				});
-			} else {
-				hand.animate({arc: [value, total, R]}, 750, "elastic");
-			}
-		}
-
-	}
-
-	function drawMarks(R, total) {
-
-		var color = "hsb(".concat(Math.round(R) / 200, ", 1, .75)"),
-		out = r.set();
-		for (var value = 0; value < total; value++) {
-			var alpha = 360 / total * value,
-			a = (90 - alpha) * Math.PI / 180,
-			x = 300 + R * Math.cos(a),
-			y = 300 - R * Math.sin(a);
-			out.push(r.circle(x, y, 2).attr(marksAttr));
-		}
-		return out;
-	}
-
-	// Part for the counter
-	updateVal(50, 60, 200, sec, 2);
-	updateVal(30, 60, 160, min, 1);
-	updateVal(3, 12, 120, hor, 0);
-
+	
 	var html2 = document.getElementById("pourcentage");
 	var pour = 0;
 	
 	function updatepour(value) {
-		html2.innerHTML = value;
+		html2.innerHTML = value + "%";
 	}
 
 	(function () {
 		
-		if(pour <= 63){
+		if(pour <= 53){
 		updatepour(pour);
 		pour +=1;
 		setTimeout(arguments.callee, 50);
@@ -98,13 +22,36 @@ window.onload = function () {
 };
 </script>
 
+<% end %>
 
-
-	<% end %>
-
-	<div id="holder"></div>
-	<div id="pourcentage">
+<div id="container">
+	<div id="menu">
+			<%= image_tag("suez.png") %>
 		
+			<a href="/dashboard/index" class="left"><img src="/images/dashboard.png"></a>
+			<a href="/dashboard/stats"><img src="/images/charts.png"></a>
+			<a href="/dashboard/points"><img src="/images/star.png"></a>
 	</div>
+</div>
 
-	<%= link_to('Logout', destroy_bottle_session_path) %>
+<div id="container">
+	
+	<div id="content">
+		<div id="contentLeft">
+			<%= image_tag("man.png") %>
+		</div>
+		<div id="contentRight">
+			Today you have drank 
+			<h1><div id="pourcentage"></div></h1>
+			<div class="textUp">
+				of your daily requirement of water.
+			</div>
+			
+		</div>
+		<div id="fullCol">
+			Do you know that each humain should drink <h3>2L</h3> per day ? It's very good for your health and especially you kydney.
+		</div>
+	</div>
+</div>
+
+

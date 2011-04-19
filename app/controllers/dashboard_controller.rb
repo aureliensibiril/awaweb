@@ -5,6 +5,12 @@ class DashboardController < ApplicationController
   def index
   end
 
+  def stats
+  end
+  
+  def points
+  end
+  
   def group
   end
 
