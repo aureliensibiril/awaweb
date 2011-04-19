@@ -10,7 +10,8 @@ class CreateBottles < ActiveRecord::Migration
         t.rememberable
         t.trackable
 
-        # t.encryptable
+         t.encryptable
+         t.string :encrypted_password, :null => false, :default => '', :limit => 128
         # t.confirmable
         # t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both
         # t.token_authenticatable

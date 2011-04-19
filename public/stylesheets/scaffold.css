@@ -67,7 +67,7 @@ body { background-color: #fff; color: #333; }
 	   the browser does not support multiple backgrounds. */
 
 	background-position:bottom left;
-	background-image:url('button_bg.png');
+	background-image:url('/images/button_bg.png');
 	
 	/* Multiple backgrounds version. The background images
 	   are defined individually in color classes */
@@ -100,8 +100,8 @@ body { background-color: #fff; color: #333; }
 	border:1px solid #a5a5a5 !important;	
 	background-color: #a9adb1;
 	
-	background-image:url('/images/button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(197,199,202,1) 0,rgba(197,199,202,0) 100px),-moz-linear-gradient(#c5c7ca, #92989c);
-	background-image:url('/images/button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(197,199,202,1)), to(rgba(197,199,202,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#c5c7ca), to(#92989c));
+	background-image:url('/images/button_bg.png'), url('/images/button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(197,199,202,1) 0,rgba(197,199,202,0) 100px),-moz-linear-gradient(#c5c7ca, #92989c);
+	background-image:url('/images/button_bg.png'), url('/images/button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(197,199,202,1)), to(rgba(197,199,202,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#c5c7ca), to(#92989c));
 	
 	-moz-border-radius:1em;
 	-webkit-border-radius:1em;
@@ -116,8 +116,8 @@ body { background-color: #fff; color: #333; }
 	
 	background-color:#b6bbc0;
 	
-	background-image:url('/images/button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(202,205,208,1) 0,rgba(202,205,208,0) 100px),-moz-linear-gradient(#d1d3d6, #9fa5a9);
-	background-image:url('/images/button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(202,205,208,1)), to(rgba(202,205,208,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#d1d3d6), to(#9fa5a9));
+	background-image:url('/images/button_bg.png'), url('/images/button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(202,205,208,1) 0,rgba(202,205,208,0) 100px),-moz-linear-gradient(#d1d3d6, #9fa5a9);
+	background-image:url('/images/button_bg.png'), url('/images/button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(202,205,208,1)), to(rgba(202,205,208,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#d1d3d6), to(#9fa5a9));
 }
 
 body, p, ol, ul, td {
@@ -174,4 +174,20 @@ div.field, div.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+#holder {
+    height: 480px;
+    margin: auto;   
+    width: 640px;
+}
+#copy {
+    bottom: 0;
+    font: 300 .7em "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif;
+    position: absolute;
+    right: 1em;
+    text-align: right;
+}
+#copy a {
+    color: #fff;
 }
