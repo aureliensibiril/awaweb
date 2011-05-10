@@ -1,21 +1,76 @@
+<div id="title">
+  <div class="container">
+    <%= image_tag "logo.png"%>
+    <div id="shadow"></div>
 
-<div id="bottle-login">
-	
-	<div id="help-arrow"></div>
-	<div id="help-click"></div>
-	
 	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-	  <%= f.text_field :serial %></p>
-
-	  <%= f.hidden_field :password, :value => "password" %></p>
-
-	  <% if devise_mapping.rememberable? -%>
-	    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+    <%= field_set_tag do %>
+    <%= f.label :email %>
+	  <%= f.text_field :email %>
+  <% if devise_mapping.rememberable? -%>
+      <br/><%= f.check_box :remember_me %> <%= f.label :remember_me, :class => "inline"%>
 	  <% end -%>
 
-	  <p><%= f.submit "CONNECT" %></p>
-	<% end %>
-	
+ 
+  <% end %>
+
+    <%= field_set_tag do %>
+      
+      <%= f.label :password %>
+      <%= f.text_field :password %>
+    
+    <% end %>
+
+    <%= field_set_tag do %>
+      <%= f.submit "Let's go" %>
+      <% end %>
+  <% end %>
+</div>
+
+</div>
+
+<div class="container">
+<div id="splash_description">
+  <div id="left-col">
+    <h1>MAINSTREAM - every fill makes a difference</h1>
+
+    <p>Mainstream is a brand new concept by Suez Environnement. Instead of buying bottled water from the grocery stores, just purchase a Mainstream stainless steel bottle, and fill it up from Mainstream fountains around the city. You can choose from a variety of options, from plain water to flavored and bubble waters. No need for coins or cash, since the fountains recognize you and your bottle, and the fills will be billed afterwards.</p>
+
+    <p><strong>By using Mainstream, you can:</strong>
+      <ul>
+        <li>save money (up to 70% cheaper)</li>
+        <li>save the environment (no more excessive bottle waste!)</li>
+        <li>donate easily to charity causes</li>
+      </ul>
+
+      But most of all: Hydrate yourself in a sustainable and easy way!</p>
+   
+    <p><strong>Remember: Every fill makes a difference!</strong></p>
+
+  </div>
+
+  <div id="right-col">
+
+    <h1>Sign Up</h1>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+      <%= label_tag "Surname" %>
+      <%= text_field_tag :surname %><br/>
+
+      <%= label_tag "Family name" %>
+      <%= text_field_tag :family_name %><br/>
+
+      <%= label_tag "Email" %>
+      <%= text_field_tag(:email) %><br/>
+
+      <%= label_tag "Password" %>
+      <%= password_field_tag :password %><br/>
+
+      <%= submit_tag("Sign Up") %>
+<% end %>
+  
+  </div>
+</div>
 </div>
 
 <!--<p class="notice"><%= notice %></p>

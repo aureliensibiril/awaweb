@@ -1,4 +1,129 @@
-body { background-color: #fff; color: #333; }
+body { background-color: #fff; color: #333; 
+margin: 0px;
+padding: 0px;}
+
+/* @group new */
+
+.container {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+form input[type=text], input[type=password]{
+	border: 3px solid #b1ba44;
+	border-radius: 15px;
+
+}
+
+#splash_description {
+	margin-top: 10px;
+	padding: 10px;
+	border-radius: 15px;
+	border: 6px solid #05afea;
+	overflow: auto;
+}
+
+#splash_description form label{
+	display: block;
+	float: left;
+	width: 120px;
+}
+
+#splash_description form input[type=text], input[type=password]{
+	width: 170px;
+	height: 20px;
+	margin-bottom: 10px;
+}
+
+#splash_description form input[type=submit]{
+	width: 100px;
+	height: 30px;
+	border-radius: 15px;
+	background-color: #b1ba44;
+	border: 1px solid #b1ba44;
+	margin-left: 195px;
+	color: white;
+}
+
+#splash_description #left-col{
+	width: 400px;
+	float: left;
+}
+
+#splash_description #right-col{
+	width: 400px;
+	float: right;
+}
+
+#title {
+	height: 70px;
+	position: relative;
+	padding-top: 5px;
+	margin-top: 20px;
+}
+
+#title img{
+	float: left;
+}
+
+#title form{
+	height: 60px;
+	display: inline;
+	float: right;
+}
+
+#title form label{
+	vertical-align: top;
+	display: block;
+	color: #3a3b3b;
+	font: 12px "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+#title form label.inline{
+	vertical-align: top;
+	display: inline;
+}
+
+#title form input{
+	vertical-align: bottom;
+
+}
+
+#title form input[type=text]{
+		width: 120px;
+		height: 17px;
+}
+
+#title form fieldset{
+	float: left;
+	border: 0;
+}
+
+#title form input[type=submit]{
+	width: 98px;
+	height: 28px;
+	border-radius: 15px;
+	background-color: #b1ba44;
+	border: 1px solid #b1ba44;
+	color: white;
+	margin-top: 12px
+}
+
+#title form input[type=submit]:hover{
+	background-image: url(/images/connect_button_hover.png);
+}
+
+h1{
+	color: #b1ba44;
+	font-size: 18px;
+}
+
+strong{
+	color: #b1ba44;
+	font-weight: bold;
+}
+/* @end */
 
 #bottle-login #help-arrow{
 	width: 239px;
@@ -29,7 +154,6 @@ body { background-color: #fff; color: #333; }
 
 #bottle-login form{
 	position: relative;
-	top: 250px;
 	text-align: center;
 }
 

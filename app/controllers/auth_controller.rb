@@ -15,7 +15,8 @@ class AuthController < ApplicationController
   end
 
   def logout
-    session[:auth] = 0
+    session[:auth] = -2
   end
+
 
 end
