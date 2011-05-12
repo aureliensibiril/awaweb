@@ -1,1 +1,40 @@
 <%= link_to('Logout', destroy_bottle_session_path) %>
+
+<div id="title">
+  <div class="container">
+
+	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <%= field_set_tag do %>
+    <%= f.label :email %>
+	  <%= f.text_field :email %>
+  <% if devise_mapping.rememberable? -%>
+      <br/><%= f.check_box :remember_me %> <%= f.label :remember_me, :class => "inline"%>
+	  <% end -%>
+
+ 
+  <% end %>
+
+    <%= field_set_tag do %>
+      
+      <%= f.label :password %>
+      <%= f.text_field :password %>
+    
+    <% end %>
+
+    <%= field_set_tag do %>
+      <%= f.submit "Let's go" %>
+      <% end %>
+  <% end %>
+</div>
+
+</div>
+
+
+<% if devise_mapping.rememberable? -%>
+  <br/><%= f.check_box :remember_me %> <%= f.label :remember_me, :class => "inline"%>
+
+
+<% end %>
+
+
+<%= render :partial => "devise/shared/links" %>

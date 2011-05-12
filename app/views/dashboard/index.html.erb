@@ -1,57 +1,6 @@
-<% content_for :javascript do %>
-<script src="/javascripts/raphael-min.js"></script>
-<script>
-window.onload = function () {
-	
-	var html2 = document.getElementById("pourcentage");
-	var pour = 0;
-	
-	function updatepour(value) {
-		html2.innerHTML = value + "%";
-	}
+<% if @validate %>
 
-	(function () {
-		
-		if(pour <= 53){
-		updatepour(pour);
-		pour +=1;
-		setTimeout(arguments.callee, 50);
-		
-	}
-		})();
-};
-</script>
-
+<%= render :partial => 'withBottle' %>
+<% else %>
+<%= render :partial => 'newsignup' %>
 <% end %>
-
-<div id="container">
-	<div id="menu">
-			<%= image_tag("suez.png") %>
-		
-			<a href="/dashboard/index" class="left"><img src="/images/dashboard.png"></a>
-			<a href="/dashboard/stats"><img src="/images/charts.png"></a>
-			<a href="/dashboard/points"><img src="/images/star.png"></a>
-	</div>
-</div>
-
-<div id="container">
-	
-	<div id="content">
-		<div id="contentLeft">
-			<%= image_tag("man.png") %>
-		</div>
-		<div id="contentRight">
-			Today you have drank 
-			<h1><div id="pourcentage"></div></h1>
-			<div class="textUp">
-				of your daily requirement of water.
-			</div>
-			
-		</div>
-		<div id="fullCol">
-			Do you know that each humain should drink <h3>2L</h3> per day ? It's very good for your health and especially you kydney.
-		</div>
-	</div>
-</div>
-
-

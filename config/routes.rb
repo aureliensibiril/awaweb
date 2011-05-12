@@ -1,5 +1,15 @@
 Awaweb::Application.routes.draw do
-  devise_for :bottles
+  
+  # api
+  namespace(:api) do
+    namespace(:v1) do
+      resources :users
+      resources :refills
+      match 'refills/new/:id/:type' => 'refills#new'
+    end
+  end
+  
+  devise_for :users
 
   get "dashboard/index"
 

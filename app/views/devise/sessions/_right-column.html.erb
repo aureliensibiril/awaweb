@@ -1,0 +1,14 @@
+<h1>Log In</h1>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<%= f.label :email %>
+<%= f.text_field :email %>  
+<%= f.label :password %>
+<%= f.password_field :password %>
+<%= f.submit "LET'S GO" %>
+<a href="/users/sign_up"><div id="signup">
+	NEW ? SIGN UP !
+</div></a>
+<br/>&nbsp;<br/>
+or :<br/>&nbsp;<br/>
+<center><%= image_tag "facebook_button.png" %></center>
+<% end %>

@@ -10,30 +10,12 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :serial %><br />
+<div id="bottle">
+	
+    <%= f.label :serial, :class => "inline" %><br />
     <%= f.text_field :serial %>
-  </div>
-  <div class="field">
-    <%= f.label :refillNumber %><br />
-    <%= f.text_field :refillNumber %>
-  </div>
-  <div class="field">
-    <%= f.label :cleaning %><br />
-    <%= f.datetime_select :cleaning %>
-  </div>
+<br/> 
+    <%= f.submit "ADD BOTTLE"%>
+</div>
 
-<p><%= f.label :email %><br />
-  <%= f.text_field :email, :value => "test@test.com" %></p>
-
-<p>
-  <%= f.hidden_field :password, :value => "password" %></p>
-
-  <p>
-  <%= f.hidden_field :password_confirmation, :value => "password" %></p>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

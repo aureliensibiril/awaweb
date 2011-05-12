@@ -1,0 +1,93 @@
+<% content_for :javascript do %>
+<script src="/javascripts/raphael-min.js"></script>
+<script>
+window.onload = function () {
+	
+	var html2 = document.getElementById("counter");
+	var pour = 0;
+	
+	function updatepour(value) {
+		html2.innerHTML = value + "%";
+	}
+
+	(function () {
+		
+		if(pour <= 53){
+		updatepour(pour);
+		pour +=1;
+		setTimeout(arguments.callee, 50);
+		
+	}
+		})();
+};
+</script>
+
+<% end %>
+
+<% content_for :menu do %>
+
+	<div id="menu">
+		<a href="/"><div class="item">
+			<h1>how are you doing?</h1>
+			see your consumption
+		</div></a>
+		<div class="item">
+			<h1>help us to help!</h1>
+			donate
+		</div>
+		<a href="/users/edit"><div class="item">
+			<h1>changes?</h1>
+			edit your data
+		</div></a>
+		<div class="item">
+			<h1>where to fill the bottle?</h1>
+			map and iPhone app
+		</div>
+	</div>
+
+<% end %>
+<div id="dash-left">
+	
+<h1>Hi, <%= @user.surname + " " + @user.name %>, WELCOME !</h1>
+
+<p><strong>Your water consumption:</strong></p>
+<p> - Yesterday : 2 fills<br/>
+	- Last month : 30 fills<br/>
+	- Total : 356 fills <br/>
+</p>
+&nbsp;<br/>
+
+<p><strong>Every fill makes a difference.</strong> With your total of 356 fills you have saved (compared to the same amount of water bought in plastic bottles):</p>
+&nbsp;<br/>&nbsp;<br/>
+ <div id="summary">
+  		<div>
+  	<%= image_tag "money.png" %><br/>275,86€
+  </div>
+
+	<div>
+  	<%= image_tag "waste.png" %><br/>17 bags of bottle waste.
+  </div>
+
+</div>
+&nbsp;<br/>&nbsp;<br/>
+
+<p>
+<strong>You have donated to UNICEF.</strong> Read more how have you helped.
+Check this page to find the nearest fountain or download and iPhone App to do it for you.</p>
+</div>
+
+<div id="dash-right">
+	<p><strong>Today you have consumed : </strong></p>
+	<div id="counter">
+		30
+	</div>
+</div>
+
+<% content_for :logout do %>
+<div id="logout">
+<strong><%= @user.surname + " " + @user.name %></strong> is logged in. <%= link_to('LOG OUT', destroy_user_session_path) %>
+</div>
+<% end %>
+<!--<p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+-->

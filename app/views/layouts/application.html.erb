@@ -11,7 +11,19 @@
 </head>
 <body>
 
-<%= yield %>
+	<div class="container">
+	<div id="splash_description">
+
+	  	<%= yield %>
+	
+	</div>
+	
+	<%= yield :menu %>
+	<%= yield :logout %>
+<a href="/"><%= image_tag "logo.png", :class => "logo"%></a>
+	<%= image_tag "suez_logo.png", :class => "suez-logo" %>
+	</div>
+
 
 </body>
 </html>

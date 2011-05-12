@@ -41,10 +41,11 @@ class BottlesController < ApplicationController
   # POST /bottles.xml
   def create
     @bottle = Bottle.new(params[:bottle])
-
+    @bottle.user_id = current_user.id
+    
     respond_to do |format|
       if @bottle.save
-        format.html { redirect_to(@bottle, :notice => 'Bottle was successfully created.') }
+        format.html { redirect_to(root_url) }
         format.xml  { render :xml => @bottle, :status => :created, :location => @bottle }
       else
         format.html { render :action => "new" }

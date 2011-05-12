@@ -10,13 +10,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110405165210) do
+ActiveRecord::Schema.define(:version => 20110510183413) do
 
   create_table "bottles", :force => true do |t|
     t.string   "serial"
-    t.integer  "refillNumber"
     t.datetime "cleaning"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "refills", :force => true do |t|
+    t.integer  "bottle_id"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "surname"
     t.string   "email",                               :default => "", :null => false
+    t.integer  "height"
+    t.integer  "weight"
+    t.integer  "group_id"
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "remember_created_at"
@@ -30,26 +54,7 @@ ActiveRecord::Schema.define(:version => 20110405165210) do
     t.datetime "updated_at"
   end
 
-  add_index "bottles", ["email"], :name => "index_bottles_on_email", :unique => true
-  add_index "bottles", ["reset_password_token"], :name => "index_bottles_on_reset_password_token", :unique => true
-
-  create_table "groups", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "surname"
-    t.string   "email"
-    t.integer  "height"
-    t.integer  "weight"
-    t.integer  "bottle_id"
-    t.integer  "group_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
