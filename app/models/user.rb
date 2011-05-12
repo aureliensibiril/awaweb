@@ -7,5 +7,5 @@ class User < ActiveRecord::Base
   has_many :bottles
         
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :surname, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :surname, :email, :password, :password_confirmation, :encrypted_password, :remember_me
 end
