@@ -6,6 +6,8 @@ Awaweb::Application.routes.draw do
       resources :users
       resources :refills
       match 'refills/new/:id/:type' => 'refills#new'
+      match 'users/bottle/:id' => 'users#bottle'
+      
     end
   end
   
