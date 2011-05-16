@@ -5,8 +5,9 @@ Awaweb::Application.routes.draw do
     namespace(:v1) do
       resources :users
       resources :refills
+      resources :datas
       match 'refills/new/:id/:type' => 'refills#new'
-      match 'users/bottle/:id' => 'users#bottle'
+      #match 'users/bottle/:id' => 'users#bottle'
       
     end
   end
