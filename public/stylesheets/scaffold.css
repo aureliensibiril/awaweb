@@ -19,7 +19,7 @@ padding: 0px;
 	top: -40px;
 	left: 40px;
 }
-form input[type=text], input[type=password]{
+form input[type=text], input[type=password], input[type=email]{
 	border: 3px solid #92d22f;
 	border-radius: 15px;
 	width: 280px;
@@ -52,7 +52,7 @@ form input[type=text], input[type=password]{
 	text-align: center;
 }
 
-#splash_description form input[type=text], input[type=password]{
+#splash_description form input[type=text], input[type=password], input[type=email]{
 	width: 195px;
 	height: 20px;
 	margin-bottom: 10px;
@@ -302,7 +302,7 @@ form #bottle input[type=submit]{
 		background-color: #05afea;
 		padding-top: 40px;
 	color: white;
-	font-size: 80px;
+	font-size: 65px;
 	font-weight: bold;
 	text-align: center;
 }
