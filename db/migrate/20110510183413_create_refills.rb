@@ -2,7 +2,7 @@ class CreateRefills < ActiveRecord::Migration
   def self.up
     create_table :refills do |t|
       t.integer :bottle_id
-      t.string :type
+      t.string :genre
 
       t.timestamps
     end

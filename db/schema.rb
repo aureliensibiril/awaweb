@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20110510183413) do
 
   create_table "refills", :force => true do |t|
     t.integer  "bottle_id"
-    t.string   "type"
+    t.string   "genre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
