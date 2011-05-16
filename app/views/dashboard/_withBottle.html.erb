@@ -12,7 +12,7 @@ window.onload = function () {
 
 	(function () {
 		
-		if(pour <= 53){
+		if(pour <= <%= @daily %>){
 		updatepour(pour);
 		pour +=1;
 		setTimeout(arguments.callee, 50);
@@ -51,21 +51,20 @@ window.onload = function () {
 <h1>Hi, <%= @user.surname + " " + @user.name %>, WELCOME !</h1>
 
 <p><strong>Your water consumption:</strong></p>
-<p> - Yesterday : 2 fills<br/>
-	- Last month : 30 fills<br/>
-	- Total : 356 fills <br/>
+<p> - Today : <%= @today.length.to_s %> fills<br/>
+	- Total : <%= @alltime.length.to_s %> fills<br/>
 </p>
 &nbsp;<br/>
 
-<p><strong>Every fill makes a difference.</strong> With your total of 356 fills you have saved (compared to the same amount of water bought in plastic bottles):</p>
+<p><strong>Every fill makes a difference.</strong> With your total of <%= @alltime.length.to_s %> fills you have saved (compared to the same amount of water bought in plastic bottles):</p>
 &nbsp;<br/>&nbsp;<br/>
  <div id="summary">
   		<div>
-  	<%= image_tag "money.png" %><br/>275,86€
+  	<%= image_tag "money.png" %><br/><%= @money %>€
   </div>
 
 	<div>
-  	<%= image_tag "waste.png" %><br/>17 bags of bottle waste.
+  	<%= image_tag "waste.png" %><br/><%= @garbage %> bags of bottle waste.
   </div>
 
 </div>
