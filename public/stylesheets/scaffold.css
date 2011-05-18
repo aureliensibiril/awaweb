@@ -313,6 +313,12 @@ form #bottle input[type=submit]{
 	right: 10px;
 }
 
+#like{
+	position: absolute;
+	bottom: 10px;
+	left: 45px;
+}
+
 #donate{
 	width: 700px;
 }

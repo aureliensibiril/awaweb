@@ -73,7 +73,8 @@ window.onload = function () {
 <p>
 <strong>You have donated to UNICEF.</strong> Read more how have you helped.
 Check this page to find the nearest fountain or download and iPhone App to do it for you.</p>
-</div>
+<p>
+</div></p>
 
 <div id="dash-right">
 	<p><strong>Today you have consumed : </strong></p>
@@ -85,6 +86,12 @@ Check this page to find the nearest fountain or download and iPhone App to do it
 <% content_for :logout do %>
 <div id="logout">
 <strong><%= @user.surname + " " + @user.name %></strong> is logged in. <%= link_to('LOG OUT', destroy_user_session_path) %>
+</div>
+<% end %>
+
+<% content_for :like do %>
+<div id="like">
+	<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=208754232497527&amp;xfbml=1"></script><fb:like href="http://awaweb.heroku.com" send="true" width="450" show_faces="false" font="arial"></fb:like>
 </div>
 <% end %>
 <!--<p class="notice"><%= notice %></p>
