@@ -1,0 +1,39 @@
+<% content_for :menu do %>
+
+	<div id="menu">
+		<a href="/"><div class="item">
+			<h1>how are you doing?</h1>
+			see your consumption
+		</div></a>
+		<a href="/dashboard/charity"><div class="item">
+			<h1>help us to help!</h1>
+			donate
+		</div></a>
+		<a href="/users/edit"><div class="item">
+			<h1>changes?</h1>
+			edit your data
+		</div></a>
+		<a href="/dashboard/map"><div class="item">
+			<h1>where to fill the bottle?</h1>
+			map and iPhone app
+		</div></a>
+	</div>
+
+<% end %>
+<div id="donate">
+	
+<h1>HELP US TO HELP! Every fill makes a difference.</h1>
+
+<p>Be a benefactor and donate while using MAINSTREAM. Every fill makes a difference and every fill can help us to help. By donating to these following purposes you can change the world.</p>
+
+<p>Want to communicate your donations to others? We will send you a ribbon of your donation cause, which you can put around the bottle. This is a great way to show others that you care!</p>
+
+<p><strong>Current donation options:</strong></p>
+<%= image_tag "charity/wwf.jpg", :class => "association" %>
+<%= image_tag "charity/world.jpg", :class => "association" %>
+<%= image_tag "charity/red.png", :class => "association" %>
+<%= image_tag "charity/plan.jpg", :class => "association" %>
+<%= image_tag "charity/pink-ribbon.jpg", :class => "association" %>
+
+
+</div>

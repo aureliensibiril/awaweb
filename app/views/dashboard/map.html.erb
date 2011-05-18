@@ -1,0 +1,96 @@
+
+<% content_for :javascript do %>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+
+var map;
+var marker;
+var image = '/images/drop.png';
+
+var markers = [];
+
+var foutains = [
+    new google.maps.LatLng(37.42717,-122.168666),
+    new google.maps.LatLng(37.426122,-122.172765),
+    new google.maps.LatLng(37.425696,-122.170994),
+	new google.maps.LatLng(37.430433,-122.17196),
+    new google.maps.LatLng(37.426684,-122.165287),
+	new google.maps.LatLng(37.423889,-122.169428),
+    new google.maps.LatLng(37.425065,-122.171144),
+    new google.maps.LatLng(37.42878,-122.173398)
+  ];
+
+function initialize() {
+	var myLatlng = new google.maps.LatLng(37.42813226737076,-122.17000722885132);
+	var myOptions = {
+		zoom: 15,
+		center: myLatlng,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+
+
+	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+	drop();
+	
+	marker = new google.maps.Marker({
+		position: myLatlng, 
+		map: map,
+		animation: google.maps.Animation.DROP,
+		icon: image
+	});
+
+	//google.maps.event.addListener(marker, 'click', toggleBounce);
+}
+
+function drop() {
+    for (var i = 0; i < foutains.length; i++) {
+	 markers.push(new google.maps.Marker({
+	      position: foutains[i],
+	      map: map,
+	      draggable: false,
+	      animation: google.maps.Animation.DROP,
+		  icon: image
+	    }));
+	 }
+  }
+
+function toggleBounce() {
+
+	if (marker.getAnimation() != null) {
+		marker.setAnimation(null);
+	} else {
+		marker.setAnimation(google.maps.Animation.BOUNCE);
+	}
+}   
+
+</script>
+<% end %>
+
+<% content_for :maps do %>
+onload="initialize()"
+<% end %>
+<% content_for :menu do %>
+
+<div id="menu">
+	<a href="/"><div class="item">
+		<h1>how are you doing?</h1>
+		see your consumption
+	</div></a>
+	<a href="/dashboard/charity"><div class="item">
+		<h1>help us to help!</h1>
+		donate
+	</div></a>
+	<a href="/users/edit"><div class="item">
+		<h1>changes?</h1>
+		edit your data
+	</div></a>
+	<a href="/dashboard/map"><div class="item">
+		<h1>where to fill the bottle?</h1>
+		map and iPhone app
+	</div></a>
+</div>
+
+<% end %>
+
+<div id="map_canvas" ></div>

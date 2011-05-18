@@ -38,5 +38,11 @@ class DashboardController < ApplicationController
   
   def order
   end
+ 
+  def charity
+  end
+
+  def map
+  end
   
 end
