@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+  #require 'oauth2'
 
   before_filter :authenticate_user!
    
@@ -31,6 +32,26 @@ class DashboardController < ApplicationController
   end
   
   def group
+    
+    @client = OAuth2::Client.new('ZJY05SESKHGDZCUZVL3SMESD3YWRUEGMFPAFLKUNGGUVUZIX', 'WZ0R1KA53LRLPRSOSGOGXZE1DCZGLSMEUUEFHYUQWYN2YFFG',
+          :site => ' http://foursquare.com',
+          :request_token_path => "/oauth2/request_token",
+          :access_token_path  => "/oauth2/access_token",
+          :authorize_path     => "/oauth2/authenticate?response_type=code",
+          :parse_json => true)
+          
+    redirect_to @client.web_server.authorize_url(
+          :redirect_uri => "http://localhost:3000/oauth2/callback"
+        )
+    #@client.auth_code.authorize_url(:redirect_uri => 'http://localhost:8080/oauth2/callback')
+    # => "https://example.org/oauth/authorization?response_type=code&client_id=client_id&redirect_uri=http://localhost:8080/oauth2/callback"
+
+    #token = @client.auth_code.get_token('authorization_code_value', :redirect_uri => 'http://localhost:8080/oauth2/callback')
+    
+    #response = token.get('/api/resource', :params => { 'query_foo' => 'bar' })
+    #response.class.name
+    # => OAuth2::Response
+    
   end
 
   def buy

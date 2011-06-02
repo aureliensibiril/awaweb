@@ -5,9 +5,24 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :all %>
   <%= csrf_meta_tag %>
+	<script src="/colorbox/jquery.colorbox.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
 <%= yield :javascript %>
+
+<script>
+$(document).ready(function(){
+	//Examples of how to assign the ColorBox event to elements
+	$("a[rel='video']").colorbox({iframe:true, innerWidth:850, innerHeight:495});
+	
+	//Example of preserving a JavaScript event for inline calls.
+	$("#click").click(function(){ 
+		$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+		return false;
+	});
+});
+</script>
+
 </head>
 <body <%= yield :maps %>>
 

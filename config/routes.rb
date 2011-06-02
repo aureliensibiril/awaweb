@@ -1,5 +1,9 @@
 Awaweb::Application.routes.draw do
   
+  get "oauth2/start"
+
+  get "oauth2/callback"
+
   # api
   namespace(:api) do
     namespace(:v1) do
